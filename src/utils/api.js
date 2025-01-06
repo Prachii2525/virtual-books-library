@@ -1,12 +1,13 @@
 const API_BASE_URL = "https://www.googleapis.com/books/v1/volumes";
 
 /**
- * Fetches popular books from the Google Books API.
- * @returns {Promise<Object[]>} - A promise that resolves to an array of popular books data.
+ * Fetches books from the Google Books API based on a query or category.
+ * @param {string} query - The search query or category name.
+ * @returns {Promise<Object[]>} - A promise that resolves to an array of books.
  */
-export const fetchPopularBooks = async () => {
+export const fetchBooks = async (query) => {
   const apiKey = import.meta.env.VITE_GOOGLE_API_KEY; // Access API key from .env file
-  const url = `${API_BASE_URL}?q=bestsellers&maxResults=20&key=${apiKey}`; // Fetch 20 results for "bestsellers"
+  const url = `${API_BASE_URL}?q=${encodeURIComponent(query)}&maxResults=20&key=${apiKey}`;
 
   try {
     const response = await fetch(url);
@@ -18,7 +19,7 @@ export const fetchPopularBooks = async () => {
     const data = await response.json();
     return data.items || []; // Return the books array or an empty array
   } catch (error) {
-    console.error("Error fetching popular books:", error);
+    console.error("Error fetching books:", error);
     throw error;
   }
 };

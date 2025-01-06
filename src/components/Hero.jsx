@@ -6,7 +6,7 @@ const Hero = () => {
      
       <video
         className="absolute inset-0 w-full h-full object-cover opacity-90"
-        src="public/assets/video.mp4" 
+        src="/assets/video.mp4" 
         autoPlay
         loop
         muted
