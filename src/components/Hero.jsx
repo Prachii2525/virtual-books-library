@@ -15,7 +15,7 @@ const Hero = () => {
     
       <div className="relative z-10 max-w-2xl px-4">
         <h1 className="text-4xl md:text-6xl font-bold mb-4">
-          Welcome to Virtual Book Library
+          Welcome to Virtual Books Library
         </h1>
         <p className="text-lg md:text-xl mb-6">
           Discover, explore, and save your favorite books all in one place. 

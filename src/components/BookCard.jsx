@@ -1,6 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
+import { toast } from "react-toastify";
+import { useFavourites } from "../contexts/FavouritesContext";
 
-const BookCard = ({ title, authors, thumbnail }) => {
+const BookCard = ({ id, title, authors, thumbnail }) => {
+  const { addFavourite } = useFavourites();
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  const handleAddToFavourites = () => {
+    // Trigger the animation
+    setIsAnimating(true);
+
+    // Add the book to favourites
+    addFavourite({ id, title, authors, thumbnail });
+
+    // Show success toast
+    toast.success(`${title} added to favourites!`);
+
+    // Remove the animation class after it completes
+    setTimeout(() => setIsAnimating(false), 300); // Match the animation duration
+  };
+
   return (
     <div className="bg-white shadow-md rounded-lg overflow-hidden">
       <img
@@ -8,12 +27,24 @@ const BookCard = ({ title, authors, thumbnail }) => {
         alt={title}
         className="w-full h-48 object-cover"
       />
-      <div className=" flex justify-between p-4">
+      <div className="flex justify-between p-4">
         <div>
           <h3 className="text-lg font-bold">{title || "Unknown Title"}</h3>
           <p className="text-gray-600">{authors?.join(", ") || "Unknown Author(s)"}</p>
         </div>
-        <button>< img src="/assets/heart-icon.png" width={20} className="h-5 mt-2" /></button>
+        <button
+          onClick={handleAddToFavourites}
+          className={`transition-transform ${
+            isAnimating ? "animate-pulse text-red-500" : "text-gray-700"
+          }`}
+        >
+          <img
+            src="/assets/heart-icon.png"
+            width={20}
+            className={`h-5 mt-2 ${isAnimating ? "scale-125" : "scale-100"}`}
+            alt="Add to favourites"
+          />
+        </button>
       </div>
     </div>
   );
