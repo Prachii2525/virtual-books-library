@@ -7,7 +7,10 @@ const Header = ({ onSearch }) => {
   return (
     <header className="bg-blue-500 text-white py-4 px-6 flex items-center justify-between">
       <h1 className="text-2xl font-bold">Virtual Book Library</h1>
-     
+     <button className=" flex gap-2 text-white ">
+      <img src="/assets/favorite.png" height={20} width={20}/>
+      <h2 className="pb-2"> My Favourites </h2>
+     </button>
     </header>
   );
 };
