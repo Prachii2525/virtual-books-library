@@ -21,7 +21,9 @@ const BookCard = ({ id, title, authors, thumbnail }) => {
   };
 
   return (
-    <div className="bg-[#F6F7C4]   border-4 shadow-2xl border-[#FFE5E5] rounded-lg overflow-hidden">
+    <div
+      className="bg-[#F6F7C4] hover:scale-105 transition-transform duration-300 border-4 shadow-2xl border-[#FFE5E5] rounded-lg overflow-hidden"
+    >
       <img
         src={thumbnail || "https://via.placeholder.com/150"}
         alt={title}
@@ -30,7 +32,9 @@ const BookCard = ({ id, title, authors, thumbnail }) => {
       <div className="flex justify-between p-4">
         <div>
           <h3 className="text-lg font-bold">{title || "Unknown Title"}</h3>
-          <p className="text-gray-600">{authors?.join(", ") || "Unknown Author(s)"}</p>
+          <p className="text-gray-600">
+            {authors?.join(", ") || "Unknown Author(s)"}
+          </p>
         </div>
         <button
           onClick={handleAddToFavourites}
