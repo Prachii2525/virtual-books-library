@@ -27,7 +27,7 @@ const BookTrailersCarousel = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto my-8">
+    <div className="max-w-full bg-[#E0AED0] mx-auto my-8">
       <h2 className="text-4xl font-bold mb-4 text-center ">Book Trailers</h2>
       <Slider {...sliderSettings}>
         {sampleTrailers.map((trailer) => (

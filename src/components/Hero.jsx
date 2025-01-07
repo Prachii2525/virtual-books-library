@@ -23,7 +23,7 @@ const Hero = () => {
         </p>
         <a
           href="#search"
-          className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-md text-lg font-semibold transition"
+          className="bg-[#756AB6] hover:bg-blue-600 text-white px-6 py-3 rounded-md text-lg font-semibold transition"
         >
           Get Started
         </a>

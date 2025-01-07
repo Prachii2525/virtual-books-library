@@ -37,55 +37,70 @@ const BookList = () => {
   };
 
   return (
-    <div className="p-6">
-      <h2 className="text-2xl font-bold mb-4">Explore Books</h2>
+    <>
 
-      <div className="flex justify-between items-center mb-4">
-        <select
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-          className="p-2 border rounded-md"
-        >
-          {categories.map((cat) => (
-            <option key={cat} value={cat}>
-              {cat}
-            </option>
-          ))}
-        </select>
-
-        <form className="flex" onSubmit={handleSearch}>
-          <input
-            type="text"
-            placeholder="Search by title or author..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="p-2 border rounded-l-md focus:outline-none"
-          />
-          <button
-            type="submit"
-            className="bg-blue-500 text-white px-4 rounded-r-md"
-          >
-            Search
-          </button>
-        </form>
+      <div className="bg-[#756AB6] text-white py-4 px-6 flex items-center justify-center ">
+        <h2 className="  text-2xl  font-bold"> Explore Books </h2>
       </div>
+      <div  className="bg-[#AC87C5]" >
+        <div className="flex  justify-between items-center pt-4 mb-4">
+          <select
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+            className="p-2 border rounded-md"
+          >
+            {categories.map((cat) => (
+              <option key={cat} value={cat}>
+                {cat}
+              </option>
+            ))}
+          </select>
 
-      {error ? (
-        <p className="text-red-500">{error}</p>
-      ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {books.map((book) => (
-            <BookCard
-              key={book.id}
-              title={book.volumeInfo.title}
-              authors={book.volumeInfo.authors}
-              thumbnail={book.volumeInfo.imageLinks?.thumbnail}
+          <form className="flex" onSubmit={handleSearch}>
+            <input
+              type="text"
+              placeholder="Search by title or author..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="p-2 border rounded-l-md focus:outline-none"
             />
-          ))}
+            <button
+              type="submit"
+              className="bg-blue-500 text-white px-4 rounded-r-md"
+            >
+              Search
+            </button>
+          </form>
         </div>
-      )}
-    </div>
+
+
+        {error ? (
+          <p className="text-red-500">{error}</p>
+
+        )
+
+          : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 ">
+              {books.map((book) => (
+                <BookCard
+                  key={book.id}
+                  title={book.volumeInfo.title}
+                  authors={book.volumeInfo.authors}
+                  thumbnail={book.volumeInfo.imageLinks?.thumbnail}
+                />
+              ))
+              }
+            </div>
+
+
+          )
+        }
+      </div>
+    </>
+
   );
+
 };
+
 
 export default BookList;
