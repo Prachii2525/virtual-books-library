@@ -22,7 +22,7 @@ const BookCard = ({ id, title, authors, thumbnail }) => {
 
   return (
     <div
-      className="bg-[#F6F7C4] hover:scale-105 transition-transform duration-300 border-4 shadow-2xl border-[#FFE5E5] rounded-lg overflow-hidden"
+      className="bg-[#F8E1B7] hover:scale-105 transition-transform duration-300 border-4 shadow-2xl border-[#FFE5E5] rounded-lg overflow-hidden"
     >
       <img
         src={thumbnail || "https://via.placeholder.com/150"}

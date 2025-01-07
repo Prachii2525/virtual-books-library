@@ -39,10 +39,10 @@ const BookList = () => {
   return (
     <>
 
-      <div className="bg-[#a9d9fc] text-[#FFFDF0] border-separate  py-4 px-6 pt-5 flex items-center justify-center ">
+      <div className="bg-[#8174A0] text-[#FFFDF0] border-separate  py-4 px-6 pt-5 flex items-center justify-center ">
         <h2 className="  text-4xl  font-bold"> Explore Books </h2>
       </div>
-      <div  className="bg-[#a9d9fc]" >
+      <div  className="bg-[#8174A0]" >
         <div className="flex  justify-between items-center pt-6 mb-4">
           <select
             value={category}

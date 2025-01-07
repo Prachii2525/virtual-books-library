@@ -6,7 +6,7 @@ const Header = ({ onSearch }) => {
   const navigate = useNavigate();
 
   return (
-    <header className="bg-[#4535C1] text-white py-4 px-6 flex items-center justify-between">
+    <header className="bg-[#441752] text-white py-4 px-6 flex items-center justify-between">
       <h1 className="text-3xl font-bold">Virtual Books Library</h1>
       <div className="flex items-center space-x-4">
        

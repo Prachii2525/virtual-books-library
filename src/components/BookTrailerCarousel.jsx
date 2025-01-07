@@ -9,6 +9,9 @@ const sampleTrailers = [
   { id: "rFpI8WDz0E4", title: "THE ROASE BARGAIN", author: " ~ Sasha Peyton Smith" },
   { id: "bsTrX9XKOCI", title: "DEATH AT MORNING HOUSE ", author: "~ Moureen Johson" },
   { id: "PX9UQoHFX3s", title: "TOO GOOD TO BE TRUE", author: "~ Prajakta Koli" },
+  { id: "SPx813jteg8", title: " A THOUSAND HEARTBEATS", author: "~ Kiera Cass" },
+  { id: "qEbCHLI7Ni0", title: "Rich Dad Poor Dad", author: "~ Robert T. Kiyosaki" },
+  { id: "xQgHz8lBvjE", title: "THESE INFINITE THREADS", author: "~ Tahereh Mafi" },
 ];
 
 const BookTrailersCarousel = () => {
@@ -27,7 +30,7 @@ const BookTrailersCarousel = () => {
   };
 
   return (
-    <div className="max-w-full bg-[#a9d9fc] mx-auto my-8">
+    <div className="max-w-full bg-[#8174A0] mx-auto my-8">
       <h2 className="text-4xl text-white font-bold mb-4 text-center">Book Trailers</h2>
       <Slider {...sliderSettings}>
         {sampleTrailers.map((trailer) => (
