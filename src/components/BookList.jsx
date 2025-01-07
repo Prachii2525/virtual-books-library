@@ -39,11 +39,11 @@ const BookList = () => {
   return (
     <>
 
-      <div className="bg-[#756AB6] text-white py-4 px-6 flex items-center justify-center ">
-        <h2 className="  text-2xl  font-bold"> Explore Books </h2>
+      <div className="bg-[#a9d9fc] text-[#FFFDF0] border-separate  py-4 px-6 pt-5 flex items-center justify-center ">
+        <h2 className="  text-4xl  font-bold"> Explore Books </h2>
       </div>
-      <div  className="bg-[#AC87C5]" >
-        <div className="flex  justify-between items-center pt-4 mb-4">
+      <div  className="bg-[#a9d9fc]" >
+        <div className="flex  justify-between items-center pt-6 mb-4">
           <select
             value={category}
             onChange={(e) => setCategory(e.target.value)}

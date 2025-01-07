@@ -3,6 +3,7 @@ import Header from '../components/Header'
 import Hero from '../components/Hero'
 import BookList from '../components/BookList'
 import BookTrailerCarousel from "../components/BookTrailerCarousel";
+import Footer from '../components/Footer';
 
 const Home = () => {
     return (
@@ -12,6 +13,7 @@ const Home = () => {
             <Hero />
             <BookList />
             <BookTrailerCarousel />
+            <Footer />
 
         </>
 

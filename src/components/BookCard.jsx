@@ -21,7 +21,7 @@ const BookCard = ({ id, title, authors, thumbnail }) => {
   };
 
   return (
-    <div className="bg-white shadow-md rounded-lg overflow-hidden">
+    <div className="bg-[#F6F7C4]   border-4 shadow-2xl border-[#FFE5E5] rounded-lg overflow-hidden">
       <img
         src={thumbnail || "https://via.placeholder.com/150"}
         alt={title}

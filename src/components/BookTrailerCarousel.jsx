@@ -1,14 +1,14 @@
 import React from "react";
 import Slider from "react-slick"; // For the carousel
 import YouTube from "react-youtube"; // YouTube player
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 // Sample trailers
 const sampleTrailers = [
-  { id: "rFpI8WDz0E4", title: "Book Trailer 1" },
-  { id: "bsTrX9XKOCI", title: "Book Trailer 2" },
-  { id: "PX9UQoHFX3s", title: "Book Trailer 3" },
+  { id: "rFpI8WDz0E4", title: "THE ROASE BARGAIN", author: " ~ Sasha Peyton Smith" },
+  { id: "bsTrX9XKOCI", title: "DEATH AT MORNING HOUSE ", author: "~ Moureen Johson" },
+  { id: "PX9UQoHFX3s", title: "TOO GOOD TO BE TRUE", author: "~ Prajakta Koli" },
 ];
 
 const BookTrailersCarousel = () => {
@@ -27,28 +27,40 @@ const BookTrailersCarousel = () => {
   };
 
   return (
-    <div className="max-w-full bg-[#E0AED0] mx-auto my-8">
-      <h2 className="text-4xl font-bold mb-4 text-center ">Book Trailers</h2>
+    <div className="max-w-full bg-[#a9d9fc] mx-auto my-8">
+      <h2 className="text-4xl text-white font-bold mb-4 text-center">Book Trailers</h2>
       <Slider {...sliderSettings}>
         {sampleTrailers.map((trailer) => (
-          <div key={trailer.id} className="p-4">
-            <YouTube
-              videoId={trailer.id}
-              opts={{
-                height: "390",
-                width: "640",
-                playerVars: {
-                  autoplay:  1, // Don't autoplay videos
-                },
-              }}
-              onReady={onVideoReady}
-            />
-            <p className="text-center mt-2 text-lg">{trailer.title}</p>
+          <div key={trailer.id} className="p-4 flex flex-col items-center">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4">
+              <div className="flex-shrink-0">
+                <YouTube
+                  videoId={trailer.id}
+                  opts={{
+                    height: "420",
+                    width: "750",
+                    playerVars: {
+                      autoplay: 1, // autoplay videos
+                    },
+                  }}
+                  onReady={onVideoReady}
+                />
+              </div>
+              <div>
+              <p className="text-4xl font-extrabold mt-4 md:mt-0 md:text-left text-center text-gray-800 p-2 rounded shadow-md">
+                {trailer.title}
+              </p>
+              <p className="text-xl flex justify-end mt-4 md:mt-0 md:text-left text-center text-gray-800  p-2 rounded shadow-md">
+                {trailer.author}
+              </p>
+              </div>
+            </div>
           </div>
         ))}
       </Slider>
     </div>
   );
+  
 };
 
 export default BookTrailersCarousel;
